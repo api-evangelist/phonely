@@ -1,0 +1,107 @@
+extends:
+  - spectral:oas
+documentationUrl: https://docs.phonely.ai/api-reference/introduction
+description: |
+  Spectral ruleset enforcing Phonely's documented Frontend API conventions:
+  - All endpoints are POST and rooted at https://app.phonely.ai/api
+  - Authentication is API key in the X-Authorization header
+  - Operation summaries use Title Case
+  - All request bodies require uid (and agentId where applicable)
+
+rules:
+  phonely-server-baseurl:
+    description: Phonely Frontend API uses https://app.phonely.ai/api as its base URL.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://app\\.phonely\\.ai/api$"
+
+  phonely-auth-x-authorization:
+    description: Phonely uses an API key in the X-Authorization header.
+    severity: error
+    given: $.components.securitySchemes[*]
+    then:
+      - field: type
+        function: enumeration
+        functionOptions:
+          values: [apiKey]
+      - field: "in"
+        function: enumeration
+        functionOptions:
+          values: [header]
+      - field: name
+        function: pattern
+        functionOptions:
+          match: "^X-Authorization$"
+
+  phonely-only-post-operations:
+    description: All Phonely Frontend API operations are HTTP POST.
+    severity: error
+    given: "$.paths[*]"
+    then:
+      function: defined
+      field: post
+
+  phonely-no-get-operations:
+    description: Phonely Frontend API does not use GET; flag any GET paths.
+    severity: error
+    given: "$.paths[*]"
+    then:
+      function: undefined
+      field: get
+
+  phonely-no-put-delete-patch:
+    description: Phonely Frontend API does not use PUT/DELETE/PATCH; updates are POST /update-agent style.
+    severity: warn
+    given: "$.paths[*]"
+    then:
+      - field: put
+        function: undefined
+      - field: delete
+        function: undefined
+      - field: patch
+        function: undefined
+
+  phonely-summary-title-case:
+    description: Operation summaries should start with "Phonely " and use Title Case.
+    severity: warn
+    given: "$.paths[*][*].summary"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^Phonely [A-Z][a-zA-Z]*( [A-Z][a-zA-Z]*)*$"
+
+  phonely-operation-id-camel:
+    description: operationId should be camelCase verbNoun (e.g. getAgent, getAgents, updateAgent).
+    severity: warn
+    given: "$.paths[*][*].operationId"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z]+$"
+
+  phonely-tag-agents:
+    description: Operations on agent endpoints should be tagged with "Agents".
+    severity: info
+    given: "$.paths[?(@property=='/get-agent' || @property=='/get-agents' || @property=='/update-agent')].post.tags"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          contains:
+            const: Agents
+
+  phonely-request-requires-uid:
+    description: Phonely request bodies require a uid field.
+    severity: error
+    given: "$.components.schemas[?(@property=='GetAgentRequest' || @property=='GetAgentsRequest' || @property=='UpdateAgentRequest')].required"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          contains:
+            const: uid

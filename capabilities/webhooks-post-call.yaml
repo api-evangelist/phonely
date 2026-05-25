@@ -1,0 +1,71 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Phonely Webhooks API — Post-Call
+  description: Phonely post-call webhook receiver capability. Exposes an HTTPS endpoint that accepts Phonely's Send Call Data POST payload after each call completes, and re-exposes the structured event as a REST and MCP surface so downstream Naftiko workflows can consume call transcripts, summaries, sentiment, action items, mentioned entities, and recording URLs.
+  tags:
+    - Phonely
+    - Voice
+    - Webhooks
+    - Events
+  created: '2026-05-24'
+  modified: '2026-05-24'
+binds:
+  - namespace: env
+    keys:
+      PHONELY_WEBHOOK_SIGNING_SECRET: PHONELY_WEBHOOK_SIGNING_SECRET
+capability:
+  exposes:
+    - type: rest
+      namespace: webhooks-post-call-rest
+      port: 8080
+      description: REST adapter that receives Phonely post-call webhook deliveries on POST /phonely/webhook and exposes the latest event via GET /phonely/events/{callId}.
+      resources:
+        - path: /phonely/webhook
+          name: webhook-receiver
+          description: Phonely POSTs post-call event payloads here.
+          operations:
+            - method: POST
+              name: receivePostCall
+              description: Receive a Phonely Post-Call Event and store/forward it.
+              inputParameters:
+                - name: body
+                  in: body
+                  type: object
+                  description: Phonely Post-Call Event payload (see asyncapi/phonely-webhooks-asyncapi.yml).
+                  required: true
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /phonely/events/{callId}
+          name: event-lookup
+          description: Retrieve a previously delivered Post-Call Event by callId.
+          operations:
+            - method: GET
+              name: getEvent
+              description: Look up a stored Phonely Post-Call Event by callId.
+              inputParameters:
+                - name: callId
+                  in: path
+                  type: string
+                  required: true
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: webhooks-post-call-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter that exposes the most recent Phonely call event to agents.
+      tools:
+        - name: phonely-get-latest-call
+          description: Retrieve the most recently delivered Phonely post-call event payload (transcript, summary, sentiment, action items, recording URL).
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: webhooks-post-call-rest.event-lookup.getEvent
+          with:
+            callId: tools.callId
+          outputParameters:
+            - type: object
+              mapping: $.

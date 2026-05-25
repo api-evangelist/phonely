@@ -1,0 +1,199 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Phonely
+providerId: phonely
+created: '2026-05-24'
+modified: '2026-05-24'
+reconciled: true
+tags:
+  - AI
+  - Voice
+  - Telephony
+  - Contact Center
+description: 'Reconciled plans and per-minute pricing for the Phonely AI voice agent platform. Source: phonely.ai/pricing and Phonely developer documentation. Phonely uses a usage-based model — minutes-included plus per-minute overage rather than per-agent seats.'
+sources:
+  - https://www.phonely.ai/pricing
+  - https://www.phonely.ai/developer
+  - https://docs.phonely.ai
+plans:
+  - id: phonely-free
+    name: Free
+    type: subscription
+    description: Try Phonely with 100 included minutes per month (~50 calls).
+    entries:
+      - label: Subscription
+        name: subscription
+        type: recurring
+        metric: month
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Included minutes
+        name: minutes_included
+        type: included
+        metric: minute
+        limit: 100
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: AI Agent Builder
+      - name: 100+ voices and languages
+      - name: Email and SMS notifications
+      - name: 1 free phone number
+
+  - id: phonely-starter
+    name: Starter
+    type: subscription
+    description: For solopreneurs and very small organizations receiving up to ~100 calls per month.
+    entries:
+      - label: Subscription (monthly)
+        name: subscription_monthly
+        type: recurring
+        metric: month
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '50.00'
+        userMultiplied: false
+      - label: Subscription (annual, per month)
+        name: subscription_annual
+        type: recurring
+        metric: month
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '33.00'
+        userMultiplied: false
+      - label: Included minutes
+        name: minutes_included
+        type: included
+        metric: minute
+        limit: 250
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Overage minutes
+        name: minutes_overage
+        type: metered
+        metric: minute
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.25'
+        userMultiplied: false
+      - label: Post-transfer minutes
+        name: minutes_post_transfer
+        type: metered
+        metric: minute
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.02'
+        userMultiplied: false
+    elements:
+      - name: Premium voices
+      - name: Transcript and AI analytics
+      - name: Spam filtering
+      - name: 3 free phone numbers
+
+  - id: phonely-pro
+    name: Pro
+    type: subscription
+    description: For small businesses handling 100-300 calls per month with live integrations and A/B testing.
+    entries:
+      - label: Subscription (monthly)
+        name: subscription_monthly
+        type: recurring
+        metric: month
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '150.00'
+        userMultiplied: false
+      - label: Subscription (annual, per month)
+        name: subscription_annual
+        type: recurring
+        metric: month
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '100.00'
+        userMultiplied: false
+      - label: Included minutes
+        name: minutes_included
+        type: included
+        metric: minute
+        limit: 750
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Overage minutes
+        name: minutes_overage
+        type: metered
+        metric: minute
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.30'
+        userMultiplied: false
+      - label: Post-transfer minutes
+        name: minutes_post_transfer
+        type: metered
+        metric: minute
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.02'
+        userMultiplied: false
+    elements:
+      - name: Conversational AI SMS (1 SMS per 10 minutes)
+      - name: Advanced API integrations
+      - name: CRM integrations (Salesforce, HubSpot, Five9)
+      - name: A/B testing
+      - name: 5 free phone numbers
+      - name: Outbound calling campaigns
+
+  - id: phonely-enterprise
+    name: Enterprise
+    type: usage-based
+    description: For high-volume contact centers handling 1,000+ calls per month with fine-tuned industry models, SIP trunking, HIPAA BAA, and dedicated infrastructure.
+    entries:
+      - label: Per-minute (as low as)
+        name: minutes_enterprise
+        type: metered
+        metric: minute
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.05'
+        userMultiplied: false
+    elements:
+      - name: Full agent buildout
+      - name: Fine-tuned industry models (healthcare, finance, real estate, insurance)
+      - name: SIP trunking
+      - name: HIPAA BAA
+      - name: Custom integrations
+      - name: Designated account manager
+      - name: Slack, Teams, and phone support
+      - name: SOC 2, GDPR, CCPA, PCI compliance
+      - name: Sub-400ms response times on dedicated infrastructure

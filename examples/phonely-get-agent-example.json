@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://app.phonely.ai/api/get-agent",
+    "headers": {
+      "X-Authorization": "phk_live_REPLACE_ME",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "uid": "user_01HABCDEFG",
+      "agentId": "agent_01HIJKLMNO"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "uid": "user_01HABCDEFG",
+      "agentId": "agent_01HIJKLMNO",
+      "name": "Front Desk Assistant",
+      "country": "US",
+      "businessPhoneNumber": "+14155551212"
+    }
+  }
+}

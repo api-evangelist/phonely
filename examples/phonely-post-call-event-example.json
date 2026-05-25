@@ -1,0 +1,62 @@
+{
+  "callId": "call_01HXY8ZZB6Q4DR9SS6S5KEM3CK",
+  "agentName": "Front Desk Assistant",
+  "callerName": "Maria Hernandez",
+  "callDirection": "inbound",
+  "callStarted": "2026-05-24T18:02:14Z",
+  "callEnded": "2026-05-24T18:05:51Z",
+  "duration": 217,
+  "businessPhoneNumber": "+14155551212",
+  "customerPhoneNumber": "+14155557777",
+  "mentionedEmail": "maria.h@example.com",
+  "mentionedDate": "2026-05-29",
+  "mentionedTime": "10:30",
+  "transcriptText": "Agent: Hello, you've reached Phonely Dental — how can I help you today?\nUser: Hi, I'd like to schedule a cleaning. ...",
+  "transcript": [
+    {
+      "role": "agent",
+      "content": "Hello, you've reached Phonely Dental — how can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "Hi, I'd like to schedule a cleaning."
+    },
+    {
+      "role": "agent",
+      "content": "Of course — could I get your name and a good email to send the confirmation to?"
+    },
+    {
+      "role": "user",
+      "content": "Maria Hernandez, maria dot h at example dot com."
+    },
+    {
+      "role": "agent",
+      "content": "Great. I have an opening Friday May twenty-ninth at ten thirty A M. Does that work?"
+    },
+    {
+      "role": "user",
+      "content": "Yes that works, thank you."
+    }
+  ],
+  "summary": "Maria Hernandez booked a dental cleaning appointment for May 29 at 10:30 AM and provided her email for confirmation.",
+  "longSummary": "Maria Hernandez called Phonely Dental to schedule a routine cleaning. The agent collected her name and email address (maria.h@example.com), offered an available appointment slot on Friday May 29 at 10:30 AM, and confirmed the booking. The caller agreed and the call ended cordially.",
+  "purpose": "Schedule a dental cleaning appointment",
+  "topic": "Appointment Scheduling",
+  "sentiment": "positive",
+  "keyPoints": [
+    "Caller is an existing patient asking for a routine cleaning",
+    "Appointment confirmed for 2026-05-29 at 10:30 AM",
+    "Confirmation email to be sent to maria.h@example.com"
+  ],
+  "unansweredQuestions": [],
+  "actionItems": [
+    "Send appointment confirmation email to maria.h@example.com",
+    "Create calendar event for 2026-05-29 10:30 AM cleaning with Maria Hernandez"
+  ],
+  "followUp": "no",
+  "followUpReason": "",
+  "ai_success": "true",
+  "recordingUrl": "https://app.phonely.ai/recordings/call_01HXY8ZZB6Q4DR9SS6S5KEM3CK.mp3",
+  "dashboardUrl": "https://app.phonely.ai/calls/call_01HXY8ZZB6Q4DR9SS6S5KEM3CK",
+  "endedReason": "caller_hangup"
+}

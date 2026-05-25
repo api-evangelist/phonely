@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://app.phonely.ai/api/update-agent",
+    "headers": {
+      "X-Authorization": "phk_live_REPLACE_ME",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "uid": "user_01HABCDEFG",
+      "agentId": "agent_01HIJKLMNO",
+      "agentName": "Front Desk Assistant",
+      "voiceId": "voice_warm_female_en_us",
+      "greetingMessage": "Hello, you've reached Phonely Dental — how can I help you today?",
+      "humanizeConversation": true,
+      "conversationStyle": "Friendly"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true
+    }
+  }
+}

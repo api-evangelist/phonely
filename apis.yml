@@ -1,0 +1,310 @@
+aid: phonely
+url: https://raw.githubusercontent.com/api-evangelist/phonely/refs/heads/main/apis.yml
+apis:
+- aid: phonely:phonely-agents-api
+  name: Phonely Agents API
+  tags:
+  - AI
+  - Voice
+  - Agents
+  - Telephony
+  - Conversational AI
+  humanURL: https://docs.phonely.ai/api-reference/introduction
+  baseURL: https://app.phonely.ai/api
+  properties:
+  - url: https://docs.phonely.ai/api-reference/introduction
+    type: Documentation
+  - url: https://docs.phonely.ai/api-reference/endpoint/get-agent
+    type: Documentation
+  - url: openapi/phonely-agents-api-openapi.yml
+    type: OpenAPI
+  - url: json-schema/phonely-agent-schema.json
+    type: JSONSchema
+  - url: json-ld/phonely-context.jsonld
+    type: JSONLD
+  - type: NaftikoCapability
+    url: capabilities/agents-agents.yaml
+  description: Manage Phonely voice agents programmatically. Retrieve a single agent or list all agents
+    for a user, and update agent configuration including voice, greeting message, name, conversation
+    style (Casual, Humorous, Direct, Formal, Persuasive, Friendly), humanization, and organization
+    membership. Authenticated with an X-Authorization API key against the app.phonely.ai/api base.
+- aid: phonely:phonely-webhooks-api
+  name: Phonely Webhooks API
+  tags:
+  - AI
+  - Voice
+  - Webhooks
+  - Events
+  - Call Data
+  humanURL: https://docs.phonely.ai/webhook-reference/intro
+  properties:
+  - url: https://docs.phonely.ai/webhook-reference/intro
+    type: Documentation
+  - url: https://docs.phonely.ai/webhook-reference/endpoint/postcall-webhook
+    type: Documentation
+  - url: asyncapi/phonely-webhooks-asyncapi.yml
+    type: AsyncAPI
+  - url: json-schema/phonely-post-call-event-schema.json
+    type: JSONSchema
+  - url: examples/phonely-post-call-event-example.json
+    type: Example
+  - type: NaftikoCapability
+    url: capabilities/webhooks-post-call.yaml
+  description: Receive structured post-call event data from Phonely after each AI voice interaction
+    completes. The Send Call Data post-call workflow action POSTs a JSON payload containing call
+    metadata, full transcript (text + structured turns), AI-generated summary, purpose, topic,
+    sentiment, key points, action items, follow-up indicators, mentioned entities (email, date,
+    time), recording URL, and dashboard URL to any HTTPS endpoint you configure.
+name: Phonely
+tags:
+- AI
+- Artificial Intelligence
+- Voice AI
+- Voice Agents
+- Conversational AI
+- Telephony
+- Phone
+- Call Center
+- Contact Center
+- SMS
+- Webhooks
+- Workflow Automation
+- Scheduling
+- CRM
+kind: contract
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+common:
+- type: Portal
+  url: https://www.phonely.ai
+- type: Documentation
+  url: https://docs.phonely.ai
+- type: Documentation
+  url: https://docs.phonely.ai/get-started/introduction
+- type: GettingStarted
+  url: https://docs.phonely.ai/get-started/quick-start
+- type: Documentation
+  url: https://www.phonely.ai/developer
+  name: Developer Platform
+- type: ChangeLog
+  url: https://www.phonely.ai/dev/changelog
+- type: Blog
+  url: https://www.phonely.ai/blogs
+- type: SignUp
+  url: https://app.phonely.ai
+  name: Phonely App
+- type: TermsOfService
+  url: https://www.phonely.ai/terms
+- type: PrivacyPolicy
+  url: https://www.phonely.ai/privacy
+- type: LinkedIn
+  url: https://www.linkedin.com/company/phonely-ai
+- type: Customers
+  url: https://customers.twilio.com/en-us/phonely
+  name: Phonely + Twilio Case Study
+- url: https://www.phonely.ai/pricing
+  data:
+  - id: free
+    name: Free
+    entries:
+    - geo: US
+      unit: 1
+      label: Subscription
+      price: 0
+      metric: month
+      timeFrame: month
+      description: Free tier subscription.
+    - geo: US
+      unit: 100
+      label: Included Minutes
+      price: 0
+      metric: minute
+      timeFrame: month
+      description: 100 included minutes per month (~50 calls).
+    elements:
+    - name: AI Agent Builder
+    - name: 100+ voices and languages
+    - name: Email and SMS notifications
+    - name: 1 free phone number
+    description: Try Phonely with 100 minutes per month.
+  - id: starter
+    name: Starter
+    entries:
+    - geo: US
+      unit: 1
+      label: Subscription
+      price: 50
+      metric: month
+      timeFrame: month
+      description: Monthly subscription ($33/month billed annually).
+    - geo: US
+      unit: 250
+      label: Included Minutes
+      price: 0
+      metric: minute
+      timeFrame: month
+      description: 250 included minutes per month (~100 calls).
+    - geo: US
+      unit: 1
+      label: Overage Minutes
+      price: 0.25
+      metric: minute
+      timeFrame: usage
+      description: Per-minute overage pricing.
+    - geo: US
+      unit: 1
+      label: Post-Transfer Minutes
+      price: 0.02
+      metric: minute
+      timeFrame: usage
+      description: Discounted per-minute pricing after a call is transferred to a human.
+    elements:
+    - name: Premium voices
+    - name: Transcript and AI analytics
+    - name: Spam filtering
+    - name: 3 free phone numbers
+    - name: Basic notifications (email + SMS)
+    description: For solopreneurs and very small organizations receiving up to ~100 calls per month.
+  - id: pro
+    name: Pro
+    entries:
+    - geo: US
+      unit: 1
+      label: Subscription
+      price: 150
+      metric: month
+      timeFrame: month
+      description: Monthly subscription ($100/month billed annually, ~33% annual discount).
+    - geo: US
+      unit: 750
+      label: Included Minutes
+      price: 0
+      metric: minute
+      timeFrame: month
+      description: 750 included minutes per month (~300 calls).
+    - geo: US
+      unit: 1
+      label: Overage Minutes
+      price: 0.30
+      metric: minute
+      timeFrame: usage
+      description: Per-minute overage pricing.
+    - geo: US
+      unit: 1
+      label: Post-Transfer Minutes
+      price: 0.02
+      metric: minute
+      timeFrame: usage
+      description: Discounted per-minute pricing after a call is transferred to a human.
+    elements:
+    - name: Conversational AI SMS (1 SMS / 10 min)
+    - name: Advanced API integrations
+    - name: CRM integrations (Salesforce, HubSpot, Five9)
+    - name: A/B testing
+    - name: 5 free phone numbers
+    - name: Outbound calling campaigns
+    description: For small businesses handling 100-300 calls per month or needing after-hours
+      coverage with live integrations.
+  - id: enterprise
+    name: Enterprise
+    entries:
+    - geo: US
+      unit: 1
+      label: Per-Minute Rate
+      price: 0.05
+      metric: minute
+      timeFrame: usage
+      description: Enterprise per-minute pricing as low as $0.05/minute at scale.
+    elements:
+    - name: Full agent buildout
+    - name: Fine-tuned industry models (healthcare, finance, real estate, insurance)
+    - name: SIP trunking
+    - name: HIPAA BAA
+    - name: Custom integrations
+    - name: Designated account manager
+    - name: Slack, Teams, and phone support
+    - name: SOC 2, GDPR, CCPA, PCI compliance
+    - name: Sub-400ms response times on dedicated infrastructure
+    description: For high-volume contact centers handling 1,000+ calls per month with industry-
+      specific fine-tuned models and dedicated infrastructure.
+  name: Plans
+  type: Plans
+- url: plans/phonely-plans-pricing.yml
+  type: Plans
+- url: rate-limits/phonely-rate-limits.yml
+  type: RateLimits
+- url: finops/phonely-finops.yml
+  type: FinOps
+- type: Features
+  data:
+  - AI voice agents that answer business phone calls in real time with sub-400ms response latency on dedicated infrastructure
+  - 1,000+ voices across 100+ languages with voice cloning
+  - Fine-tuned industry models for healthcare, finance, real estate, insurance, and home services
+  - Visual workflow builder with API Request blocks for arbitrary REST integrations
+  - Prebuilt one-click integrations with Google Calendar, Salesforce, HubSpot, Five9, Zapier, Outlook, Slack, Gmail
+  - Outbound calling campaigns for lead capture, qualification, and follow-up
+  - SMS conversational AI (Pro plan and above)
+  - Real-time appointment booking and CRM updates
+  - Call transcription, AI summaries, sentiment analysis, key points, and action items
+  - Post-call webhooks delivering structured JSON to any HTTPS endpoint
+  - A/B testing across agent configurations
+  - Frontend REST API for agent management with X-Authorization API key auth
+  - Spam filtering on inbound calls
+  - SIP trunking on Enterprise plans
+  - HIPAA, SOC 2, GDPR, CCPA, and PCI compliance
+  - Usage-based pricing with no per-agent fees — pay only for active AI call time
+  - 10,000+ customers handling 100,000+ daily calls (per company claims)
+  - Positioned against Bland AI, Retell AI, Vapi, and Dialora as a contact-center alternative
+  sources:
+  - https://www.phonely.ai
+  - https://www.phonely.ai/developer
+  - https://www.phonely.ai/pricing
+  - https://docs.phonely.ai
+  - https://docs.phonely.ai/api-reference/introduction
+  - https://docs.phonely.ai/webhook-reference/intro
+  - https://customers.twilio.com/en-us/phonely
+  updated: '2026-05-24'
+- type: UseCases
+  data:
+  - Healthcare appointment scheduling and intake with HIPAA BAA
+  - Insurance claim intake and qualification
+  - Contact center / call center automation for SMBs
+  - Legal intake and lead qualification
+  - Real estate lead capture and showing scheduling
+  - Home services dispatch and quoting
+  - Payment collection and processing over the phone
+  - Outbound sales outreach and lead qualification campaigns
+  - After-hours phone answering and ticketing
+  - Multilingual customer support across 100+ languages
+- type: Integrations
+  data:
+  - Google Calendar (one-click)
+  - Outlook (one-click)
+  - Gmail (one-click)
+  - Slack (one-click)
+  - Salesforce CRM (one-click)
+  - HubSpot CRM (one-click)
+  - Five9 contact center (one-click)
+  - Zapier (one-click)
+  - Twilio (SIP trunking and number provisioning, enterprise)
+  - Any REST API via the visual workflow builder "API Request" block (curl import)
+created: '2026-05-24'
+modified: '2026-05-24'
+position: Consuming
+description: Phonely is an AI voice agent platform that answers business phone calls in real time
+  with large-language-model-powered conversation, sub-400ms response latency, 1,000+ voices across
+  100+ languages, and fine-tuned industry models for healthcare, finance, real estate, and
+  insurance. The platform exposes a REST API at app.phonely.ai/api for agent management and a
+  post-call webhook that delivers structured JSON (transcript, summary, sentiment, action items,
+  recording URL) to any HTTPS endpoint after each call. Prebuilt integrations cover Google
+  Calendar, Salesforce, HubSpot, Five9, Zapier, Outlook, Slack, and Gmail; the visual workflow
+  builder also supports importing arbitrary REST APIs from a curl command. Pricing is usage-based
+  with Free, Starter ($50/mo), Pro ($150/mo), and Enterprise tiers — minutes-included plus
+  per-minute overage rather than per-agent seats. The platform is SOC 2, HIPAA, GDPR, CCPA, and
+  PCI compliant.
+maintainers:
+- FN: Kin Lane
+  email: info@apievangelist.com
+  X: apievangelist
+  url: https://apievangelist.com
+specificationVersion: '0.16'

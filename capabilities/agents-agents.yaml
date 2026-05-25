@@ -1,0 +1,164 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Phonely Agents API — Agents
+  description: Phonely Agents API — manage voice agents. Three operations covering retrieval (single and list) and update. Self-contained Naftiko capability covering the Phonely agent management business surface.
+  tags:
+    - Phonely
+    - Voice
+    - Agents
+  created: '2026-05-24'
+  modified: '2026-05-24'
+binds:
+  - namespace: env
+    keys:
+      PHONELY_API_KEY: PHONELY_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: agents-agents
+      baseUri: https://app.phonely.ai
+      description: Phonely Agents API — Agents business capability. Self-contained, no shared references.
+      resources:
+        - name: get-agent
+          path: /api/get-agent
+          operations:
+            - name: getAgent
+              method: POST
+              description: Phonely Get Agent
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+              inputParameters:
+                - name: body
+                  in: body
+                  type: object
+                  description: Request body containing uid and agentId.
+                  required: true
+        - name: get-agents
+          path: /api/get-agents
+          operations:
+            - name: getAgents
+              method: POST
+              description: Phonely Get Agents
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: array
+                  value: $.
+              inputParameters:
+                - name: body
+                  in: body
+                  type: object
+                  description: Request body containing uid.
+                  required: true
+        - name: update-agent
+          path: /api/update-agent
+          operations:
+            - name: updateAgent
+              method: POST
+              description: Phonely Update Agent
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+              inputParameters:
+                - name: body
+                  in: body
+                  type: object
+                  description: Request body with uid, agentId, and any mutable fields (agentName, voiceId, greetingMessage, humanizeConversation, conversationStyle, orgId).
+                  required: true
+      authentication:
+        type: apikey
+        key: X-Authorization
+        value: '{{env.PHONELY_API_KEY}}'
+        placement: header
+  exposes:
+    - type: rest
+      namespace: agents-agents-rest
+      port: 8080
+      description: REST adapter for Phonely Agents API.
+      resources:
+        - path: /api/get-agent
+          name: get-agent
+          description: REST surface for get-agent.
+          operations:
+            - method: POST
+              name: getAgent
+              description: Phonely Get Agent
+              call: agents-agents.getAgent
+              with:
+                body: rest.body
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /api/get-agents
+          name: get-agents
+          description: REST surface for get-agents.
+          operations:
+            - method: POST
+              name: getAgents
+              description: Phonely Get Agents
+              call: agents-agents.getAgents
+              with:
+                body: rest.body
+              outputParameters:
+                - type: array
+                  mapping: $.
+        - path: /api/update-agent
+          name: update-agent
+          description: REST surface for update-agent.
+          operations:
+            - method: POST
+              name: updateAgent
+              description: Phonely Update Agent
+              call: agents-agents.updateAgent
+              with:
+                body: rest.body
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: agents-agents-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Phonely Agents API. One tool per consumed operation.
+      tools:
+        - name: phonely-get-agent
+          description: Retrieve a single Phonely voice agent by uid and agentId.
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: agents-agents.getAgent
+          with:
+            body: tools.body
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: phonely-get-agents
+          description: List all Phonely voice agents for the authenticated user.
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: agents-agents.getAgents
+          with:
+            body: tools.body
+          outputParameters:
+            - type: array
+              mapping: $.
+        - name: phonely-update-agent
+          description: Update mutable fields on a Phonely voice agent (name, voice, greeting, conversation style, humanization, organization).
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: agents-agents.updateAgent
+          with:
+            body: tools.body
+          outputParameters:
+            - type: object
+              mapping: $.

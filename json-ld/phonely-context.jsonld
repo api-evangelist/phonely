@@ -1,0 +1,68 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://schema.org/",
+    "phonely": "https://app.phonely.ai/api/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Agent": {
+      "@id": "phonely:Agent",
+      "@context": {
+        "uid": { "@id": "phonely:Agent/uid", "@type": "xsd:string" },
+        "agentId": { "@id": "phonely:Agent/agentId", "@type": "xsd:string" },
+        "name": { "@id": "schema:name", "@type": "xsd:string" },
+        "country": { "@id": "schema:addressCountry", "@type": "xsd:string" },
+        "businessPhoneNumber": { "@id": "schema:telephone", "@type": "xsd:string" },
+        "voiceId": { "@id": "phonely:Agent/voiceId", "@type": "xsd:string" },
+        "greetingMessage": { "@id": "phonely:Agent/greetingMessage", "@type": "xsd:string" },
+        "humanizeConversation": { "@id": "phonely:Agent/humanizeConversation", "@type": "xsd:boolean" },
+        "conversationStyle": { "@id": "phonely:Agent/conversationStyle", "@type": "xsd:string" },
+        "orgId": { "@id": "phonely:Agent/orgId", "@type": "xsd:string" }
+      }
+    },
+
+    "Call": {
+      "@id": "phonely:Call",
+      "@context": {
+        "callId": { "@id": "phonely:Call/callId", "@type": "xsd:string" },
+        "agentName": { "@id": "phonely:Call/agentName", "@type": "xsd:string" },
+        "callerName": { "@id": "phonely:Call/callerName", "@type": "xsd:string" },
+        "callDirection": { "@id": "phonely:Call/callDirection", "@type": "xsd:string" },
+        "callStarted": { "@id": "schema:startTime", "@type": "xsd:dateTime" },
+        "callEnded": { "@id": "schema:endTime", "@type": "xsd:dateTime" },
+        "duration": { "@id": "schema:duration", "@type": "xsd:decimal" },
+        "businessPhoneNumber": { "@id": "phonely:Call/businessPhoneNumber", "@type": "xsd:string" },
+        "customerPhoneNumber": { "@id": "phonely:Call/customerPhoneNumber", "@type": "xsd:string" },
+        "transcriptText": { "@id": "phonely:Call/transcriptText", "@type": "xsd:string" },
+        "transcript": { "@id": "phonely:Call/transcript", "@container": "@list" },
+        "summary": { "@id": "schema:abstract", "@type": "xsd:string" },
+        "longSummary": { "@id": "schema:description", "@type": "xsd:string" },
+        "purpose": { "@id": "phonely:Call/purpose", "@type": "xsd:string" },
+        "topic": { "@id": "schema:about", "@type": "xsd:string" },
+        "sentiment": { "@id": "phonely:Call/sentiment", "@type": "xsd:string" },
+        "keyPoints": { "@id": "phonely:Call/keyPoints", "@container": "@list" },
+        "actionItems": { "@id": "phonely:Call/actionItems", "@container": "@list" },
+        "unansweredQuestions": { "@id": "phonely:Call/unansweredQuestions", "@container": "@list" },
+        "followUp": { "@id": "phonely:Call/followUp", "@type": "xsd:string" },
+        "followUpReason": { "@id": "phonely:Call/followUpReason", "@type": "xsd:string" },
+        "ai_success": { "@id": "phonely:Call/aiSuccess", "@type": "xsd:string" },
+        "recordingUrl": { "@id": "schema:contentUrl", "@type": "xsd:anyURI" },
+        "dashboardUrl": { "@id": "schema:url", "@type": "xsd:anyURI" },
+        "endedReason": { "@id": "phonely:Call/endedReason", "@type": "xsd:string" },
+        "mentionedEmail": { "@id": "schema:email", "@type": "xsd:string" },
+        "mentionedDate": { "@id": "phonely:Call/mentionedDate", "@type": "xsd:string" },
+        "mentionedTime": { "@id": "phonely:Call/mentionedTime", "@type": "xsd:string" }
+      }
+    },
+
+    "TranscriptTurn": {
+      "@id": "phonely:TranscriptTurn",
+      "@context": {
+        "role": { "@id": "phonely:TranscriptTurn/role", "@type": "xsd:string" },
+        "content": { "@id": "schema:text", "@type": "xsd:string" }
+      }
+    }
+  }
+}

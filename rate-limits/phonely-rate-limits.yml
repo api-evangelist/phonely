@@ -1,0 +1,65 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Phonely
+providerId: phonely
+created: '2026-05-24'
+modified: '2026-05-24'
+reconciled: false
+tags:
+  - AI
+  - Voice
+  - Telephony
+  - Rate Limiting
+description: |
+  Phonely does not publish formal numeric API rate limits in its public documentation as of
+  2026-05. The platform's primary enforcement mechanism is plan-based minute quotas (100 / 250 /
+  750 included minutes per month on Free / Starter / Pro, with metered per-minute overage and
+  custom volume on Enterprise) rather than per-second request throttles on the Frontend API.
+
+  This document captures what is observable: HTTP 401 on missing or invalid X-Authorization keys
+  and the documented spend / volume tiers tied to each plan. Numeric per-minute or per-second
+  request limits should be confirmed with Phonely support for production deployments.
+sources:
+  - https://www.phonely.ai/pricing
+  - https://docs.phonely.ai/api-reference/introduction
+  - https://docs.phonely.ai/webhook-reference/intro
+headers: {}
+responseCodes:
+  unauthorized: 401
+  notFound: 404
+  serverError: 500
+algorithm: unknown
+spendLimits:
+  - tier: Free
+    monthlyMinutes: 100
+    monthlyCallsApprox: 50
+    overagePerMinute: 'N/A (hard cap)'
+  - tier: Starter
+    monthlyMinutes: 250
+    monthlyCallsApprox: 100
+    overagePerMinute: '$0.25'
+  - tier: Pro
+    monthlyMinutes: 750
+    monthlyCallsApprox: 300
+    overagePerMinute: '$0.30'
+  - tier: Enterprise
+    monthlyMinutes: 'Custom'
+    monthlyCallsApprox: '1000+'
+    overagePerMinute: 'As low as $0.05'
+limits:
+  - surface: Frontend REST API (app.phonely.ai/api)
+    perSecond: 'unpublished'
+    perMinute: 'unpublished'
+    notes: Authentication is API key via X-Authorization header. Invalid or missing key returns 401.
+  - surface: Voice agent (call minutes)
+    perSecond: 'N/A'
+    perMonth: 'Plan-defined (100 / 250 / 750 / custom)'
+    notes: Plan-based monthly minutes with metered per-minute overage. Sub-400ms response latency on Enterprise dedicated infrastructure.
+  - surface: Post-call webhook delivery
+    perSecond: 'unpublished'
+    notes: Customer endpoint must respond quickly to avoid sender timeouts and log delivery failures.
+recommendations:
+  - Treat the Frontend API as a low-volume management surface; do not depend on tight per-second throughput without a written commitment from Phonely.
+  - Cache agent records client-side when polling get-agents repeatedly.
+  - Make webhook receivers idempotent on callId in case of redeliveries.

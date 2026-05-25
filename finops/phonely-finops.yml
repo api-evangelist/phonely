@@ -1,0 +1,109 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Phonely
+providerId: phonely
+created: '2026-05-24'
+modified: '2026-05-24'
+reconciled: true
+tags:
+  - FinOps
+  - Cost Management
+  - FOCUS
+  - AI
+  - Voice
+  - Telephony
+description: FOCUS-aligned FinOps definition for Phonely's AI voice agent platform. Subscription tier plus minutes-metered usage with separate post-transfer minute rate and per-tier overage pricing.
+sources:
+  - https://www.phonely.ai/pricing
+  - https://www.phonely.ai/developer
+  - https://docs.phonely.ai
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Phonely
+serviceCategory: AI and Machine Learning
+billingModel:
+  pricingCategory: Subscription + Usage-Based
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+    - Usage
+    - Purchase
+    - Tax
+    - Credit
+    - Adjustment
+  primaryUnit: minute
+  secondaryUnits:
+    - phone_number
+    - sms
+    - seat
+focusColumns:
+  ServiceName: Phonely Voice AI
+  ServiceCategory: AI and Machine Learning
+  ProviderName: Phonely
+  PublisherName: Phonely
+  InvoiceIssuerName: Phonely
+  PricingCategory: Subscription + Usage-Based
+  PricingUnit: minute
+  BillingCurrency: USD
+meters:
+  - name: subscription
+    unit: month
+    aggregation: max
+    dimensions:
+      - plan
+      - billing_cycle
+  - name: included_minutes
+    unit: minute
+    aggregation: sum
+    dimensions:
+      - plan
+      - agent_id
+  - name: overage_minutes
+    unit: minute
+    aggregation: sum
+    dimensions:
+      - plan
+      - agent_id
+      - call_direction
+  - name: post_transfer_minutes
+    unit: minute
+    aggregation: sum
+    dimensions:
+      - plan
+      - agent_id
+  - name: phone_numbers
+    unit: phone_number
+    aggregation: max
+    dimensions:
+      - plan
+      - country
+  - name: sms_messages
+    unit: message
+    aggregation: sum
+    dimensions:
+      - plan
+      - agent_id
+allocation:
+  recommendedTags:
+    - cost_center
+    - department
+    - agent_id
+    - use_case
+    - business_unit
+    - line_of_business
+  notes: Phonely does not publish native cost-allocation tagging. Recommend per-agent dimensioning at ingest time using the agentId from the post-call webhook payload and the agentId field on the Agents API.
+optimization:
+  - Choose the smallest plan whose included minutes cover ~70% of expected monthly call minutes; overage at $0.25-$0.30/min is more expensive than upgrading.
+  - For high-volume call flows that transfer to human agents, leverage the $0.02/min post-transfer rate by terminating the AI portion as soon as the transfer is confirmed.
+  - Annual billing on Starter and Pro yields ~33% savings vs monthly.
+  - Enterprise per-minute pricing as low as $0.05/min is significantly cheaper than Pro overage; cross over to Enterprise once monthly minutes exceed roughly the Pro plan plus 500-700 overage minutes.
+  - Use A/B testing (Pro+) to compare agent configurations on call duration — shorter average call duration directly reduces minutes consumed.
+notes:
+  - Phonely positions itself as usage-based, not per-agent — there is no per-seat charge for additional AI agents.
+  - Phone numbers are included up to plan limits (1 / 3 / 5 on Free / Starter / Pro); additional numbers may incur separate charges.
+  - SMS conversational AI is rate-limited at 1 SMS per 10 minutes on Pro and is bundled.

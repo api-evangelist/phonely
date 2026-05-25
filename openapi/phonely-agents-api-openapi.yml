@@ -1,0 +1,326 @@
+openapi: 3.1.0
+info:
+  title: Phonely Agents API
+  description: |
+    The Phonely Agents API lets you programmatically retrieve and update Phonely
+    AI voice agents — the conversational entities that answer or place phone calls
+    on behalf of a business. Authentication is via an `X-Authorization` header
+    carrying an API key issued from the Phonely app. All endpoints are POST and
+    accept JSON request bodies. The base URL is `https://app.phonely.ai/api`.
+
+    Phonely's "Frontend API" is documented at https://docs.phonely.ai/api-reference/introduction
+    and complements the visual workflow builder, which supports importing arbitrary
+    REST APIs via curl. This OpenAPI describes the publicly documented endpoints
+    only — additional internal endpoints power the dashboard but are not part of
+    the public contract.
+  version: "1.0.0"
+  contact:
+    name: Phonely
+    url: https://www.phonely.ai
+  license:
+    name: Phonely Terms of Service
+    url: https://www.phonely.ai/terms
+servers:
+  - url: https://app.phonely.ai/api
+    description: Production Server
+security:
+  - ApiKeyAuth: []
+tags:
+  - name: Agents
+    description: Retrieve and update Phonely voice agents.
+
+paths:
+  /get-agent:
+    post:
+      summary: Phonely Get Agent
+      description: Retrieve a single Phonely agent by its agent ID for the authenticated user.
+      operationId: getAgent
+      tags:
+        - Agents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetAgentRequest'
+            examples:
+              GetAgentExample:
+                $ref: '#/components/examples/GetAgentRequestExample'
+      responses:
+        '200':
+          description: Agent retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Agent'
+              examples:
+                AgentExample:
+                  $ref: '#/components/examples/AgentExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /get-agents:
+    post:
+      summary: Phonely Get Agents
+      description: List all Phonely agents owned by the authenticated user.
+      operationId: getAgents
+      tags:
+        - Agents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetAgentsRequest'
+            examples:
+              GetAgentsExample:
+                $ref: '#/components/examples/GetAgentsRequestExample'
+      responses:
+        '200':
+          description: Array of agent records.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Agent'
+              examples:
+                AgentListExample:
+                  $ref: '#/components/examples/AgentListExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /update-agent:
+    post:
+      summary: Phonely Update Agent
+      description: |
+        Update mutable fields on a Phonely agent. `uid` and `agentId` are required;
+        all other fields are optional and only update the agent record when supplied.
+      operationId: updateAgent
+      tags:
+        - Agents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAgentRequest'
+            examples:
+              UpdateAgentExample:
+                $ref: '#/components/examples/UpdateAgentRequestExample'
+      responses:
+        '200':
+          description: Agent updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+              examples:
+                SuccessExample:
+                  $ref: '#/components/examples/SuccessExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Authorization
+      description: API key issued from the Phonely app. Send the raw key value as the header.
+
+  schemas:
+    GetAgentRequest:
+      type: object
+      required:
+        - uid
+        - agentId
+      properties:
+        uid:
+          type: string
+          description: User identifier of the agent owner.
+        agentId:
+          type: string
+          description: Identifier of the agent to retrieve.
+
+    GetAgentsRequest:
+      type: object
+      required:
+        - uid
+      properties:
+        uid:
+          type: string
+          description: User identifier whose agents will be returned.
+
+    UpdateAgentRequest:
+      type: object
+      required:
+        - uid
+        - agentId
+      properties:
+        uid:
+          type: string
+          description: User identifier of the agent owner.
+        agentId:
+          type: string
+          description: Identifier of the agent to update.
+        agentName:
+          type: string
+          maxLength: 50
+          description: Display name of the agent.
+        voiceId:
+          type: string
+          description: Identifier of the voice to use for this agent. See Phonely's voice library for valid identifiers.
+        greetingMessage:
+          type: string
+          maxLength: 500
+          description: Initial greeting played to the caller when a call is answered.
+        humanizeConversation:
+          type: boolean
+          description: When true, enables natural conversation pacing, filler words, and disfluencies.
+        conversationStyle:
+          type: string
+          description: Conversation style applied across the agent's responses.
+          enum:
+            - Casual
+            - Humorous
+            - Direct
+            - Formal
+            - Persuasive
+            - Friendly
+        orgId:
+          type: string
+          description: Optional organization identifier to associate the agent with.
+
+    Agent:
+      type: object
+      description: A Phonely voice agent.
+      required:
+        - uid
+        - agentId
+      properties:
+        uid:
+          type: string
+          description: User identifier of the agent owner.
+        agentId:
+          type: string
+          description: Stable identifier of the agent.
+        name:
+          type: string
+          description: Display name of the agent.
+        country:
+          type: string
+          description: ISO country code or country name associated with the agent's primary phone number.
+        businessPhoneNumber:
+          type: string
+          description: The business phone number assigned to this agent in E.164 format.
+
+    SuccessResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: True when the operation succeeded.
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Machine-readable error code.
+        message:
+          type: string
+          description: Human-readable error message.
+
+  responses:
+    BadRequest:
+      description: The request was malformed or failed validation.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid X-Authorization API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested agent does not exist.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ServerError:
+      description: An unexpected server error occurred.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+  examples:
+    GetAgentRequestExample:
+      summary: Get a single agent
+      value:
+        uid: user_01HABCDEFG
+        agentId: agent_01HIJKLMNO
+
+    GetAgentsRequestExample:
+      summary: List all agents for a user
+      value:
+        uid: user_01HABCDEFG
+
+    UpdateAgentRequestExample:
+      summary: Update voice and greeting
+      value:
+        uid: user_01HABCDEFG
+        agentId: agent_01HIJKLMNO
+        agentName: Front Desk Assistant
+        voiceId: voice_warm_female_en_us
+        greetingMessage: Hello, you've reached Phonely Dental — how can I help you today?
+        humanizeConversation: true
+        conversationStyle: Friendly
+
+    AgentExample:
+      summary: Single agent record
+      value:
+        uid: user_01HABCDEFG
+        agentId: agent_01HIJKLMNO
+        name: Front Desk Assistant
+        country: US
+        businessPhoneNumber: "+14155551212"
+
+    AgentListExample:
+      summary: Two agents
+      value:
+        - uid: user_01HABCDEFG
+          agentId: agent_01HIJKLMNO
+          name: Front Desk Assistant
+          country: US
+          businessPhoneNumber: "+14155551212"
+        - uid: user_01HABCDEFG
+          agentId: agent_01HPQRSTUV
+          name: Outbound Qualifier
+          country: US
+          businessPhoneNumber: "+14155553434"
+
+    SuccessExample:
+      summary: Success response
+      value:
+        success: true

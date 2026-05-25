@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.com/schemas/phonely/phonely-agent-schema.json",
+  "title": "Phonely Agent",
+  "description": "Schema for a Phonely voice agent record as returned by POST /api/get-agent and POST /api/get-agents, and the update payload accepted by POST /api/update-agent.",
+  "type": "object",
+  "definitions": {
+    "Agent": {
+      "type": "object",
+      "description": "A Phonely voice agent that answers or places phone calls on behalf of a business.",
+      "required": ["uid", "agentId"],
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "User identifier of the agent owner."
+        },
+        "agentId": {
+          "type": "string",
+          "description": "Stable identifier of the agent."
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name of the agent."
+        },
+        "country": {
+          "type": "string",
+          "description": "ISO country code or country name associated with the agent's primary phone number."
+        },
+        "businessPhoneNumber": {
+          "type": "string",
+          "description": "Business phone number assigned to this agent in E.164 format."
+        }
+      }
+    },
+    "UpdateAgentRequest": {
+      "type": "object",
+      "description": "Mutable fields that can be updated on a Phonely agent.",
+      "required": ["uid", "agentId"],
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "User identifier of the agent owner."
+        },
+        "agentId": {
+          "type": "string",
+          "description": "Identifier of the agent to update."
+        },
+        "agentName": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "Display name of the agent."
+        },
+        "voiceId": {
+          "type": "string",
+          "description": "Identifier of the voice to use for this agent."
+        },
+        "greetingMessage": {
+          "type": "string",
+          "maxLength": 500,
+          "description": "Initial greeting played to the caller."
+        },
+        "humanizeConversation": {
+          "type": "boolean",
+          "description": "When true, enables natural conversation pacing, filler words, and disfluencies."
+        },
+        "conversationStyle": {
+          "type": "string",
+          "description": "Conversation style applied across the agent's responses.",
+          "enum": [
+            "Casual",
+            "Humorous",
+            "Direct",
+            "Formal",
+            "Persuasive",
+            "Friendly"
+          ]
+        },
+        "orgId": {
+          "type": "string",
+          "description": "Optional organization identifier to associate the agent with."
+        }
+      }
+    }
+  },
+  "oneOf": [
+    { "$ref": "#/definitions/Agent" },
+    { "$ref": "#/definitions/UpdateAgentRequest" }
+  ]
+}
