@@ -46,7 +46,7 @@ apis:
       - url: json-schema/phonely-post-call-event-schema.json
         type: JSONSchema
       - url: examples/phonely-post-call-event-example.json
-        type: Example
+        type: Examples
     description: >-
       Receive structured post-call event data from Phonely after each AI voice interaction completes. The Send Call Data
       post-call workflow action POSTs a JSON payload containing call metadata, full transcript (text + structured
@@ -87,7 +87,7 @@ common:
     url: https://www.phonely.ai/dev/changelog
   - type: Blog
     url: https://www.phonely.ai/blogs
-  - type: SignUp
+  - type: Signup
     url: https://app.phonely.ai
     name: Phonely App
   - type: TermsOfService
