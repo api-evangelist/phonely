@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/phonely-agents-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: X-Authorization
+  description: API key issued from the Phonely app. Send the raw key value as the header.
+  sources:
+  - openapi/phonely-agents-api-openapi.yml
