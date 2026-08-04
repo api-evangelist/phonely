@@ -1,0 +1,14 @@
+{
+  "provider": "phonely",
+  "sources": [
+    "phonely-agents-api-openapi.yml"
+  ],
+  "outputs": [
+    "phonely-agents-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
