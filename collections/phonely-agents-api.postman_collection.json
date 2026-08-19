@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "ffbbd068-aa78-4e7b-ac5f-79914dbff55a",
+      "id": "ce045d0e-be85-4fb6-b11e-0030ebad3453",
       "name": "Agents",
       "description": {
         "content": "Retrieve and update Phonely voice agents.",
@@ -9,7 +9,7 @@
       },
       "item": [
         {
-          "id": "89c6e862-cfba-44f5-bbd6-b5f9b4b74f55",
+          "id": "cbdf2692-915f-40d1-8b9a-37233e49c024",
           "name": "Phonely Get Agent",
           "request": {
             "name": "Phonely Get Agent",
@@ -51,7 +51,7 @@
           },
           "response": [
             {
-              "id": "5120311a-4679-4e27-962e-4e44cc1dc98c",
+              "id": "a528cbd5-60d6-43e3-a98f-c7b33ce92248",
               "name": "Agent retrieved successfully.",
               "originalRequest": {
                 "url": {
@@ -102,7 +102,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "825d6599-fb8d-4de3-b288-5eed419d8457",
+              "id": "c7fc2265-7ebd-49d5-b78d-3f9893a1321c",
               "name": "The request was malformed or failed validation.",
               "originalRequest": {
                 "url": {
@@ -153,7 +153,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "33124acd-28df-4d8d-ae9b-c2201f77a2f4",
+              "id": "a9b99a48-569d-4fcb-a024-53b5234f1440",
               "name": "Missing or invalid X-Authorization API key.",
               "originalRequest": {
                 "url": {
@@ -204,7 +204,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "34787d2b-74eb-4997-ae62-6c314cceb70e",
+              "id": "d0bd956e-e8b5-46d4-a591-1a2e8a628f4c",
               "name": "The requested agent does not exist.",
               "originalRequest": {
                 "url": {
@@ -255,7 +255,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "132ec192-c256-4a47-aedb-11a3f7ff4a6b",
+              "id": "9a03b54d-c420-41b1-ae08-44dfefe4e4f0",
               "name": "An unexpected server error occurred.",
               "originalRequest": {
                 "url": {
@@ -312,7 +312,7 @@
           }
         },
         {
-          "id": "5737ac4c-b12c-4317-9e08-7032d547a59f",
+          "id": "6d80b214-ed56-49ac-bad1-9a8981bf8047",
           "name": "Phonely Get Agents",
           "request": {
             "name": "Phonely Get Agents",
@@ -354,7 +354,7 @@
           },
           "response": [
             {
-              "id": "f9d95f30-aec5-41c3-94c4-8e38720aceff",
+              "id": "c8930130-c0d0-45a4-ba04-e2e2e67ace10",
               "name": "Array of agent records.",
               "originalRequest": {
                 "url": {
@@ -405,7 +405,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "ff676625-fe6a-48af-84d2-e4b56e4db1d9",
+              "id": "3cfefb38-3289-475f-ad14-e0c929df534c",
               "name": "The request was malformed or failed validation.",
               "originalRequest": {
                 "url": {
@@ -456,7 +456,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "5049c727-d97d-4710-b35a-44f1a7bcf3c5",
+              "id": "0863d266-5e9d-4f97-ba6c-9648121ead75",
               "name": "Missing or invalid X-Authorization API key.",
               "originalRequest": {
                 "url": {
@@ -507,7 +507,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "c1428348-362f-45f6-9eb0-5f62f9775018",
+              "id": "57efb703-5930-444c-bad3-fafed9069879",
               "name": "An unexpected server error occurred.",
               "originalRequest": {
                 "url": {
@@ -564,7 +564,7 @@
           }
         },
         {
-          "id": "0892a73e-b5c7-4721-a299-674d620d75ec",
+          "id": "44f8e84b-bd87-43eb-b2fb-bcb1b974ec50",
           "name": "Phonely Update Agent",
           "request": {
             "name": "Phonely Update Agent",
@@ -606,7 +606,7 @@
           },
           "response": [
             {
-              "id": "ac50b96f-4b7c-40ef-a5fa-b42838a012b1",
+              "id": "21cd7832-ffc9-43c1-acc2-da9b716e9c63",
               "name": "Agent updated successfully.",
               "originalRequest": {
                 "url": {
@@ -657,7 +657,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "951966d0-f09b-4783-acc4-3fae6be17c53",
+              "id": "2cb3e75e-ace0-4d2c-a520-918772d0489d",
               "name": "The request was malformed or failed validation.",
               "originalRequest": {
                 "url": {
@@ -708,7 +708,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "b42208a9-d5c9-40da-ba3f-a85b12dd96b1",
+              "id": "611cde51-545b-40d9-9ea6-df293c3a138e",
               "name": "Missing or invalid X-Authorization API key.",
               "originalRequest": {
                 "url": {
@@ -759,7 +759,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "f8c5fad8-771f-4d9e-93c9-81d4e101a2c4",
+              "id": "0078714a-5b79-4544-9f9a-903cb206a1c8",
               "name": "The requested agent does not exist.",
               "originalRequest": {
                 "url": {
@@ -810,7 +810,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "8dda038a-98c2-42fc-a7f6-c73999a89048",
+              "id": "a0356602-2c48-4ce2-862a-f4707725d5da",
               "name": "An unexpected server error occurred.",
               "originalRequest": {
                 "url": {
@@ -896,7 +896,7 @@
     ]
   },
   "info": {
-    "_postman_id": "36fea7d8-a17b-40fa-acfa-f70b6aa3420d",
+    "_postman_id": "2fb505c7-8b64-4a2e-b278-096bf713c050",
     "name": "Phonely Agents API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
