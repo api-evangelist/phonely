@@ -4,6 +4,12 @@ apis:
   - aid: phonely:phonely-agents-api
     name: Phonely Agents API
     tags:
+      - Artificial Intelligence
+      - Voice
+      - Agents
+      - Telephony
+      - Conversational AI
+    tags_raw:
       - AI
       - Voice
       - Agents
@@ -30,6 +36,12 @@ apis:
   - aid: phonely:phonely-webhooks-api
     name: Phonely Webhooks API
     tags:
+      - Artificial Intelligence
+      - Voice
+      - Webhook
+      - Event
+      - Call Data
+    tags_raw:
       - AI
       - Voice
       - Webhooks
@@ -54,6 +66,20 @@ apis:
       entities (email, date, time), recording URL, and dashboard URL to any HTTPS endpoint you configure.
 name: Phonely
 tags:
+  - Artificial Intelligence
+  - Voice AI
+  - Voice Agents
+  - Conversational AI
+  - Telephony
+  - Phone
+  - Call Center
+  - Contact Center
+  - SMS
+  - Webhook
+  - Workflow-Automation
+  - Scheduling
+  - CRM
+tags_raw:
   - AI
   - Artificial Intelligence
   - Voice AI
