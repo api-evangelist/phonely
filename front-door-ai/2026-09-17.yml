@@ -1,0 +1,29 @@
+# Front Door AI Index — phonely — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: phonely
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.phonely.ai
+  final_host: www.phonely.ai
+  ownership: own
+  owner: phonely
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 57
+  host_score: 57
+  density: 36.28
+  words: 1571
+  tiers:
+    agentic: 6
+    core: 50
+    model: 1
+  ambiguous: 20
+  top_terms:
+    AI: 50
+    agent: 19
+    AI agent: 6
+    GPT: 1
+    intelligence: 1

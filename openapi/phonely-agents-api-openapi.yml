@@ -1,28 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Phonely Agents API
   description: 'The Phonely Agents API lets you programmatically retrieve and update Phonely
 
     AI voice agents — the conversational entities that answer or place phone calls
 
-    on behalf of a business. Authentication is via an `X-Authorization` header
-
-    carrying an API key issued from the Phonely app. All endpoints are POST and
-
-    accept JSON request bodies. The base URL is `https://app.phonely.ai/api`.
-
-
-    Phonely''s "Frontend API" is documented at https://docs.phonely.ai/api-reference/introduction
-
-    and complements the visual workflow builder, which supports importing arbitrary
-
-    REST APIs via curl. This OpenAPI describes the publicly documented endpoints
-
-    only — additional internal endpoints power the dashboard but are not part of
-
-    the public contract.
-
-    '
+    on behalf of a business.'
   version: 1.0.0
   contact:
     name: Phonely
@@ -112,9 +95,7 @@ paths:
       summary: Phonely Update Agent
       description: 'Update mutable fields on a Phonely agent. `uid` and `agentId` are required;
 
-        all other fields are optional and only update the agent record when supplied.
-
-        '
+        all other fields are optional and only update the agent record when supplied.'
       operationId: updateAgent
       tags:
       - Agents
@@ -146,77 +127,28 @@ paths:
         '500':
           $ref: '#/components/responses/ServerError'
 components:
-  examples:
-    SuccessExample:
-      summary: Success response
-      value:
-        success: true
-    AgentListExample:
-      summary: Two agents
-      value:
-      - uid: user_01HABCDEFG
-        agentId: agent_01HIJKLMNO
-        name: Front Desk Assistant
-        country: US
-        businessPhoneNumber: '+14155551212'
-      - uid: user_01HABCDEFG
-        agentId: agent_01HPQRSTUV
-        name: Outbound Qualifier
-        country: US
-        businessPhoneNumber: '+14155553434'
-    UpdateAgentRequestExample:
-      summary: Update voice and greeting
-      value:
-        uid: user_01HABCDEFG
-        agentId: agent_01HIJKLMNO
-        agentName: Front Desk Assistant
-        voiceId: voice_warm_female_en_us
-        greetingMessage: Hello, you've reached Phonely Dental — how can I help you today?
-        humanizeConversation: true
-        conversationStyle: Friendly
-    GetAgentRequestExample:
-      summary: Get a single agent
-      value:
-        uid: user_01HABCDEFG
-        agentId: agent_01HIJKLMNO
-    AgentExample:
-      summary: Single agent record
-      value:
-        uid: user_01HABCDEFG
-        agentId: agent_01HIJKLMNO
-        name: Front Desk Assistant
-        country: US
-        businessPhoneNumber: '+14155551212'
-    GetAgentsRequestExample:
-      summary: List all agents for a user
-      value:
-        uid: user_01HABCDEFG
-  responses:
-    Unauthorized:
-      description: Missing or invalid X-Authorization API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    ServerError:
-      description: An unexpected server error occurred.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: The request was malformed or failed validation.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: The requested agent does not exist.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
+    GetAgentRequest:
+      type: object
+      required:
+      - uid
+      - agentId
+      properties:
+        uid:
+          type: string
+          description: User identifier of the agent owner.
+        agentId:
+          type: string
+          description: Identifier of the agent to retrieve.
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Machine-readable error code.
+        message:
+          type: string
+          description: Human-readable error message.
     Agent:
       type: object
       description: A Phonely voice agent.
@@ -292,27 +224,76 @@ components:
         orgId:
           type: string
           description: Optional organization identifier to associate the agent with.
-    GetAgentRequest:
-      type: object
-      required:
-      - uid
-      - agentId
-      properties:
-        uid:
-          type: string
-          description: User identifier of the agent owner.
-        agentId:
-          type: string
-          description: Identifier of the agent to retrieve.
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Machine-readable error code.
-        message:
-          type: string
-          description: Human-readable error message.
+  examples:
+    SuccessExample:
+      summary: Success response
+      value:
+        success: true
+    AgentExample:
+      summary: Single agent record
+      value:
+        uid: user_01HABCDEFG
+        agentId: agent_01HIJKLMNO
+        name: Front Desk Assistant
+        country: US
+        businessPhoneNumber: '+14155551212'
+    AgentListExample:
+      summary: Two agents
+      value:
+      - uid: user_01HABCDEFG
+        agentId: agent_01HIJKLMNO
+        name: Front Desk Assistant
+        country: US
+        businessPhoneNumber: '+14155551212'
+      - uid: user_01HABCDEFG
+        agentId: agent_01HPQRSTUV
+        name: Outbound Qualifier
+        country: US
+        businessPhoneNumber: '+14155553434'
+    GetAgentRequestExample:
+      summary: Get a single agent
+      value:
+        uid: user_01HABCDEFG
+        agentId: agent_01HIJKLMNO
+    UpdateAgentRequestExample:
+      summary: Update voice and greeting
+      value:
+        uid: user_01HABCDEFG
+        agentId: agent_01HIJKLMNO
+        agentName: Front Desk Assistant
+        voiceId: voice_warm_female_en_us
+        greetingMessage: Hello, you've reached Phonely Dental — how can I help you today?
+        humanizeConversation: true
+        conversationStyle: Friendly
+    GetAgentsRequestExample:
+      summary: List all agents for a user
+      value:
+        uid: user_01HABCDEFG
+  responses:
+    ServerError:
+      description: An unexpected server error occurred.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: The request was malformed or failed validation.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid X-Authorization API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested agent does not exist.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
