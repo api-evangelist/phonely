@@ -76,7 +76,7 @@ tags:
   - Contact Center
   - SMS
   - Webhook
-  - Workflow-Automation
+  - Workflow Automation
   - Scheduling
   - CRM
 tags_raw:
@@ -94,6 +94,7 @@ tags_raw:
   - Workflow Automation
   - Scheduling
   - CRM
+  - Workflow-Automation
 kind: contract
 deliveryModel:
   model: saas
