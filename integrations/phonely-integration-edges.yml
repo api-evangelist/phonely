@@ -1,0 +1,259 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/phonely/integrations
+checked:
+- https://composio.dev/toolkits/phonely
+- https://monid.ai/tools/phonely
+- https://n8n.io/integrations/phonely/
+- https://zapier.com/apps/phonely/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  channel: ipaas-listing
+  app: phonely
+  url: https://zapier.com/apps/phonely/integrations
+  external_url: https://phonely.ai/
+  partner_tier: BRONZE
+  triggers:
+  - key: new_call
+    label: New Call
+  actions:
+  - key: create_call
+    label: Outbound Call
+  searches: []
+edges:
+- partner_name: HubSpot
+  partner: hubspot
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/hubspot
+  direction: third-party
+  category: Marketing Automation
+  partner_url: http://www.hubspot.com/
+- partner_name: Sortd for Gmail
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/sortd
+  direction: third-party
+  category: Team Collaboration
+  partner_url: https://www.sortd.com/
+- partner_name: Google Calendar
+  partner: google-calendar
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/google-calendar
+  direction: third-party
+  category: Calendar
+  partner_url: https://calendar.google.com/
+- partner_name: Gmail
+  partner: gmail
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/gmail
+  direction: third-party
+  category: Email
+  partner_url: https://mail.google.com/
+- partner_name: Front
+  partner: front
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/front-app
+  direction: third-party
+  category: Customer Support
+  partner_url: https://front.com/?utm_medium=referral&utm_source=partner-marketplace&utm_campaign=zapier
+- partner_name: Autotask
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/autotask
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: http://www.autotask.com/
+- partner_name: Microsoft Outlook
+  partner: microsoft-outlook
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/microsoft-outlook
+  direction: third-party
+  category: Calendar
+  partner_url: https://outlook.live.com/
+- partner_name: WhatsApp Notifications
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/whatsapp-notifications
+  direction: third-party
+  category: Communication
+  partner_url: null
+- partner_name: Follow Up Boss
+  partner: follow-up-boss
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/follow-up-boss
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: http://www.followupboss.com/
+- partner_name: Microsoft Office 365
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/office-365
+  direction: third-party
+  category: Email
+  partner_url: https://www.office.com/
+- partner_name: Freshdesk
+  partner: freshdesk
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/freshdesk
+  direction: third-party
+  category: Customer Support
+  partner_url: http://freshdesk.com/
+- partner_name: Callingly
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/callingly
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://callingly.com/
+- partner_name: Google Sheets
+  partner: google-sheets
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/google-sheets
+  direction: third-party
+  category: Google
+  partner_url: http://sheets.google.com/
+- partner_name: Google Drive
+  partner: google-drive
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/google-drive
+  direction: third-party
+  category: File Management & Storage
+  partner_url: https://www.google.com/drive/
+- partner_name: Housecall Pro
+  partner: housecall-pro
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/housecall-pro
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://www.housecallpro.com/
+- partner_name: Rosie
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/rosie
+  direction: third-party
+  category: AI Assistants
+  partner_url: https://heyrosie.com/
+- partner_name: VoIPstudio
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/voipstudio
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://voipstudio.com/
+templates:
+- title: Log new Phonely calls by creating rows in Google Sheets
+  url: https://zapier.com/apps/google-sheets/integrations/phonely/1718844/log-new-phonely-calls-by-creating-rows-in-google-sheets
+  apps:
+  - phonely
+  - google-sheets
+- title: Send emails in Gmail for new calls in Phonely
+  url: https://zapier.com/apps/gmail/integrations/phonely/1747909/send-emails-in-gmail-for-new-calls-in-phonely
+  apps:
+  - phonely
+  - gmail
+- title: Send Slack channel messages for new Phonely calls
+  url: https://zapier.com/apps/phonely/integrations/slack/1720496/send-slack-channel-messages-for-new-phonely-calls
+  apps:
+  - phonely
+  - slack
+- title: Send emails in Microsoft Outlook from new calls in Phonely
+  url: https://zapier.com/apps/microsoft-outlook/integrations/phonely/1730430/send-emails-in-microsoft-outlook-from-new-calls-in-phonely
+  apps:
+  - phonely
+  - microsoft-outlook
+- title: Create records in Zapier Tables from new calls in Phonely
+  url: https://zapier.com/apps/phonely/integrations/zapier-tables/1752873/create-records-in-zapier-tables-from-new-calls-in-phonely
+  apps:
+  - phonely
+  - zapier-tables
+- title: Create new HubSpot tickets from new Phonely calls
+  url: https://zapier.com/apps/hubspot/integrations/phonely/1765847/create-new-hubspot-tickets-from-new-phonely-calls
+  apps:
+  - phonely
+  - hubspot
+- title: Send new Phonely calls as outbound emails through Email by Zapier
+  url: https://zapier.com/apps/email/integrations/phonely/255574150/send-new-phonely-calls-as-outbound-emails-through-email-by-zapier
+  apps:
+  - phonely
+  - email
+- title: Create new Asana tasks from new Phonely calls
+  url: https://zapier.com/apps/asana/integrations/phonely/255579755/create-new-asana-tasks-from-new-phonely-calls
+  apps:
+  - phonely
+  - asana
+- title: Create Notion database items for new Phonely calls
+  url: https://zapier.com/apps/notion/integrations/phonely/255581583/create-notion-database-items-for-new-phonely-calls
+  apps:
+  - phonely
+  - notion
+template_total: 9
