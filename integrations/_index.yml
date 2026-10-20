@@ -15,6 +15,7 @@
   evidence: https://zapier.com/apps/google-sheets/integrations/phonely/1718844/log-new-phonely-calls-by-creating-rows-in-google-sheets
   template: https://zapier.com/apps/google-sheets/integrations/phonely/1718844/log-new-phonely-calls-by-creating-rows-in-google-sheets
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: phonely-send-emails-in-gmail-for-new-calls-in-phonely
@@ -29,6 +30,7 @@
   evidence: https://zapier.com/apps/gmail/integrations/phonely/1747909/send-emails-in-gmail-for-new-calls-in-phonely
   template: https://zapier.com/apps/gmail/integrations/phonely/1747909/send-emails-in-gmail-for-new-calls-in-phonely
   source: template
+  relationship: ipaas-bridge
   status: pending-partner-spec
   arazzo: null
 - slug: phonely-send-emails-in-microsoft-outlook-from-new-calls-in-phonely
@@ -43,6 +45,7 @@
   evidence: https://zapier.com/apps/microsoft-outlook/integrations/phonely/1730430/send-emails-in-microsoft-outlook-from-new-calls-in-phonely
   template: https://zapier.com/apps/microsoft-outlook/integrations/phonely/1730430/send-emails-in-microsoft-outlook-from-new-calls-in-phonely
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: phonely-create-new-hubspot-tickets-from-new-phonely-calls
@@ -57,156 +60,8 @@
   evidence: https://zapier.com/apps/hubspot/integrations/phonely/1765847/create-new-hubspot-tickets-from-new-phonely-calls
   template: https://zapier.com/apps/hubspot/integrations/phonely/1765847/create-new-hubspot-tickets-from-new-phonely-calls
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
-  arazzo: null
-- slug: phonely-sortd-for-gmail
-  label: Sortd for Gmail
-  partner_name: Sortd for Gmail
-  category: Team Collaboration
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/phonely/integrations/sortd
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: phonely-google-calendar
-  label: Google Calendar
-  partner: google-calendar
-  partner_name: Google Calendar
-  category: Calendar
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/phonely/integrations/google-calendar
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: phonely-front
-  label: Front
-  partner: front
-  partner_name: Front
-  category: Customer Support
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/phonely/integrations/front-app
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: phonely-autotask
-  label: Autotask
-  partner_name: Autotask
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/phonely/integrations/autotask
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: phonely-whatsapp-notifications
-  label: WhatsApp Notifications
-  partner_name: WhatsApp Notifications
-  category: Communication
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/phonely/integrations/whatsapp-notifications
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: phonely-follow-up-boss
-  label: Follow Up Boss
-  partner: follow-up-boss
-  partner_name: Follow Up Boss
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/phonely/integrations/follow-up-boss
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: phonely-microsoft-office-365
-  label: Microsoft Office 365
-  partner_name: Microsoft Office 365
-  category: Email
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/phonely/integrations/office-365
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: phonely-freshdesk
-  label: Freshdesk
-  partner: freshdesk
-  partner_name: Freshdesk
-  category: Customer Support
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/phonely/integrations/freshdesk
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: phonely-callingly
-  label: Callingly
-  partner_name: Callingly
-  category: Phone & SMS
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/phonely/integrations/callingly
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: phonely-google-drive
-  label: Google Drive
-  partner: google-drive
-  partner_name: Google Drive
-  category: File Management & Storage
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/phonely/integrations/google-drive
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: phonely-housecall-pro
-  label: Housecall Pro
-  partner: housecall-pro
-  partner_name: Housecall Pro
-  category: Scheduling & Booking
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/phonely/integrations/housecall-pro
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: phonely-rosie
-  label: Rosie
-  partner_name: Rosie
-  category: AI Assistants
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/phonely/integrations/rosie
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: phonely-voipstudio
-  label: VoIPstudio
-  partner_name: VoIPstudio
-  category: Phone & SMS
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/phonely/integrations/voipstudio
-  source: edge
-  status: pending-partner-spec
   arazzo: null
 - slug: phonely-zapier
   label: Zapier
@@ -232,4 +87,166 @@
     beta: false
     builder: unknown (not in the directory record)
   status: not-a-workflow
+  arazzo: null
+- slug: phonely-sortd-for-gmail
+  label: Sortd for Gmail
+  partner_name: Sortd for Gmail
+  category: Team Collaboration
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/sortd
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: phonely-google-calendar
+  label: Google Calendar
+  partner: google-calendar
+  partner_name: Google Calendar
+  category: Calendar
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/google-calendar
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: phonely-front
+  label: Front
+  partner: front
+  partner_name: Front
+  category: Customer Support
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/front-app
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: phonely-autotask
+  label: Autotask
+  partner_name: Autotask
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/autotask
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: phonely-whatsapp-notifications
+  label: WhatsApp Notifications
+  partner_name: WhatsApp Notifications
+  category: Communication
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/whatsapp-notifications
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: phonely-follow-up-boss
+  label: Follow Up Boss
+  partner: follow-up-boss
+  partner_name: Follow Up Boss
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/follow-up-boss
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: phonely-microsoft-office-365
+  label: Microsoft Office 365
+  partner_name: Microsoft Office 365
+  category: Email
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/office-365
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: phonely-freshdesk
+  label: Freshdesk
+  partner: freshdesk
+  partner_name: Freshdesk
+  category: Customer Support
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/freshdesk
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: phonely-callingly
+  label: Callingly
+  partner_name: Callingly
+  category: Phone & SMS
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/callingly
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: phonely-google-drive
+  label: Google Drive
+  partner: google-drive
+  partner_name: Google Drive
+  category: File Management & Storage
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/google-drive
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: phonely-housecall-pro
+  label: Housecall Pro
+  partner: housecall-pro
+  partner_name: Housecall Pro
+  category: Scheduling & Booking
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/housecall-pro
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: phonely-rosie
+  label: Rosie
+  partner_name: Rosie
+  category: AI Assistants
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/rosie
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: phonely-voipstudio
+  label: VoIPstudio
+  partner_name: VoIPstudio
+  category: Phone & SMS
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/phonely/integrations/voipstudio
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
   arazzo: null
