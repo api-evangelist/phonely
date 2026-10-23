@@ -125,6 +125,8 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/phonely.png
 access: 3rd-Party
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/phonely/overview
   - type: Website
     url: https://www.phonely.ai/
   - type: AgenticAccess
