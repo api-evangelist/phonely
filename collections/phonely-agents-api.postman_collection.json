@@ -1,32 +1,26 @@
 {
+  "info": {
+    "_postman_id": "2770cb16-a6ec-487c-bf9d-786de7fb5aee",
+    "name": "Phonely Agents API",
+    "description": "The Phonely Agents API lets you programmatically retrieve and update Phonely\nAI voice agents \u2014 the conversational entities that answer or place phone calls\non behalf of a business.\n\nContact Support:\n Name: Phonely",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T01:26:29.000Z",
+    "updatedAt": "2026-10-22T01:26:30.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2770cb16-a6ec-487c-bf9d-786de7fb5aee"
+  },
   "item": [
     {
-      "id": "ce045d0e-be85-4fb6-b11e-0030ebad3453",
-      "name": "Agents",
-      "description": {
-        "content": "Retrieve and update Phonely voice agents.",
-        "type": "text/plain"
-      },
+      "name": "get-agent",
       "item": [
         {
-          "id": "cbdf2692-915f-40d1-8b9a-37233e49c024",
           "name": "Phonely Get Agent",
+          "id": "555f737e-8e14-4205-a37c-5be0fe7b3a3b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
-            "name": "Phonely Get Agent",
-            "description": {
-              "content": "Retrieve a single Phonely agent by its agent ID for the authenticated user.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "get-agent"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
+            "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
@@ -37,299 +31,330 @@
                 "value": "application/json"
               }
             ],
-            "method": "POST",
-            "auth": null,
             "body": {
               "mode": "raw",
               "raw": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\"\n}",
               "options": {
                 "raw": {
+                  "headerFamily": "json",
                   "language": "json"
                 }
               }
-            }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/get-agent",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "get-agent"
+              ]
+            },
+            "description": "Retrieve a single Phonely agent by its agent ID for the authenticated user."
           },
           "response": [
             {
-              "id": "a528cbd5-60d6-43e3-a98f-c7b33ce92248",
+              "id": "20a2941f-04c5-46ff-b05c-f899859fe458",
               "name": "Agent retrieved successfully.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "get-agent"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\",\n  \"agentId\": \"agent_01HIJKLMNO\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/get-agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "get-agent"
+                  ]
                 }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"uid\": \"user_01HABCDEFG\",\n  \"agentId\": \"agent_01HIJKLMNO\",\n  \"name\": \"Front Desk Assistant\",\n  \"country\": \"US\",\n  \"businessPhoneNumber\": \"+14155551212\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"country\": \"<string>\",\n  \"businessPhoneNumber\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-20a2941f-04c5-46ff-b05c-f899859fe458"
             },
             {
-              "id": "c7fc2265-7ebd-49d5-b78d-3f9893a1321c",
+              "id": "80f8bb82-5c4d-4a6e-9c74-144d25760948",
               "name": "The request was malformed or failed validation.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "get-agent"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\",\n  \"agentId\": \"agent_01HIJKLMNO\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/get-agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "get-agent"
+                  ]
                 }
               },
               "status": "Bad Request",
               "code": 400,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-80f8bb82-5c4d-4a6e-9c74-144d25760948"
             },
             {
-              "id": "a9b99a48-569d-4fcb-a024-53b5234f1440",
+              "id": "618187c0-33d1-4066-905b-9ca5c72ba297",
               "name": "Missing or invalid X-Authorization API key.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "get-agent"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\",\n  \"agentId\": \"agent_01HIJKLMNO\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/get-agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "get-agent"
+                  ]
                 }
               },
               "status": "Unauthorized",
               "code": 401,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-618187c0-33d1-4066-905b-9ca5c72ba297"
             },
             {
-              "id": "d0bd956e-e8b5-46d4-a591-1a2e8a628f4c",
+              "id": "6ceff830-df61-414a-8c05-d4e23d5a31fa",
               "name": "The requested agent does not exist.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "get-agent"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\",\n  \"agentId\": \"agent_01HIJKLMNO\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/get-agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "get-agent"
+                  ]
                 }
               },
               "status": "Not Found",
               "code": 404,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-6ceff830-df61-414a-8c05-d4e23d5a31fa"
             },
             {
-              "id": "9a03b54d-c420-41b1-ae08-44dfefe4e4f0",
+              "id": "02dd95b1-027d-408b-9f39-008b0ac1dfc1",
               "name": "An unexpected server error occurred.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "get-agent"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\",\n  \"agentId\": \"agent_01HIJKLMNO\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/get-agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "get-agent"
+                  ]
                 }
               },
               "status": "Internal Server Error",
               "code": 500,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-02dd95b1-027d-408b-9f39-008b0ac1dfc1"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-22T01:26:30.000Z",
+          "updatedAt": "2026-10-22T01:26:30.000Z",
+          "uid": "35240-555f737e-8e14-4205-a37c-5be0fe7b3a3b"
+        }
+      ],
+      "id": "da87c3f4-d583-45d4-a9d8-e6436549dbaa",
+      "createdAt": "2026-10-22T01:26:30.000Z",
+      "updatedAt": "2026-10-22T01:26:30.000Z",
+      "uid": "35240-da87c3f4-d583-45d4-a9d8-e6436549dbaa"
+    },
+    {
+      "name": "get-agents",
+      "item": [
+        {
+          "name": "Phonely Get Agents",
+          "id": "8bc5dd0f-6178-4535-8997-814a94c15587",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "6d80b214-ed56-49ac-bad1-9a8981bf8047",
-          "name": "Phonely Get Agents",
+          },
           "request": {
-            "name": "Phonely Get Agents",
-            "description": {
-              "content": "List all Phonely agents owned by the authenticated user.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "get-agents"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
+            "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
@@ -340,248 +365,274 @@
                 "value": "application/json"
               }
             ],
-            "method": "POST",
-            "auth": null,
             "body": {
               "mode": "raw",
               "raw": "{\n  \"uid\": \"<string>\"\n}",
               "options": {
                 "raw": {
+                  "headerFamily": "json",
                   "language": "json"
                 }
               }
-            }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/get-agents",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "get-agents"
+              ]
+            },
+            "description": "List all Phonely agents owned by the authenticated user."
           },
           "response": [
             {
-              "id": "c8930130-c0d0-45a4-ba04-e2e2e67ace10",
+              "id": "f7e1accd-1298-4fb7-b311-b3ec63ef01fd",
               "name": "Array of agent records.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "get-agents"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/get-agents",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "get-agents"
+                  ]
                 }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "[\n  {\n    \"uid\": \"user_01HABCDEFG\",\n    \"agentId\": \"agent_01HIJKLMNO\",\n    \"name\": \"Front Desk Assistant\",\n    \"country\": \"US\",\n    \"businessPhoneNumber\": \"+14155551212\"\n  },\n  {\n    \"uid\": \"user_01HABCDEFG\",\n    \"agentId\": \"agent_01HPQRSTUV\",\n    \"name\": \"Outbound Qualifier\",\n    \"country\": \"US\",\n    \"businessPhoneNumber\": \"+14155553434\"\n  }\n]",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "[\n  {\n    \"uid\": \"<string>\",\n    \"agentId\": \"<string>\",\n    \"name\": \"<string>\",\n    \"country\": \"<string>\",\n    \"businessPhoneNumber\": \"<string>\"\n  },\n  {\n    \"uid\": \"<string>\",\n    \"agentId\": \"<string>\",\n    \"name\": \"<string>\",\n    \"country\": \"<string>\",\n    \"businessPhoneNumber\": \"<string>\"\n  }\n]",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-f7e1accd-1298-4fb7-b311-b3ec63ef01fd"
             },
             {
-              "id": "3cfefb38-3289-475f-ad14-e0c929df534c",
+              "id": "07834f3d-7915-47ae-b986-07e521ce75f3",
               "name": "The request was malformed or failed validation.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "get-agents"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/get-agents",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "get-agents"
+                  ]
                 }
               },
               "status": "Bad Request",
               "code": 400,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-07834f3d-7915-47ae-b986-07e521ce75f3"
             },
             {
-              "id": "0863d266-5e9d-4f97-ba6c-9648121ead75",
+              "id": "437479b3-ca73-4cb7-b8a8-55c9af4a2186",
               "name": "Missing or invalid X-Authorization API key.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "get-agents"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/get-agents",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "get-agents"
+                  ]
                 }
               },
               "status": "Unauthorized",
               "code": 401,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-437479b3-ca73-4cb7-b8a8-55c9af4a2186"
             },
             {
-              "id": "57efb703-5930-444c-bad3-fafed9069879",
+              "id": "870e4b07-e9ae-4296-8d26-6b7ad053dfd4",
               "name": "An unexpected server error occurred.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "get-agents"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/get-agents",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "get-agents"
+                  ]
                 }
               },
               "status": "Internal Server Error",
               "code": 500,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-870e4b07-e9ae-4296-8d26-6b7ad053dfd4"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-22T01:26:30.000Z",
+          "updatedAt": "2026-10-22T01:26:30.000Z",
+          "uid": "35240-8bc5dd0f-6178-4535-8997-814a94c15587"
+        }
+      ],
+      "id": "56bb66da-e48b-4676-b2bf-6e65d9c91e4c",
+      "createdAt": "2026-10-22T01:26:30.000Z",
+      "updatedAt": "2026-10-22T01:26:30.000Z",
+      "uid": "35240-56bb66da-e48b-4676-b2bf-6e65d9c91e4c"
+    },
+    {
+      "name": "update-agent",
+      "item": [
+        {
+          "name": "Phonely Update Agent",
+          "id": "d99d4119-d1cb-43f8-96d7-7380cb5bcee1",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "44f8e84b-bd87-43eb-b2fb-bcb1b974ec50",
-          "name": "Phonely Update Agent",
+          },
           "request": {
-            "name": "Phonely Update Agent",
-            "description": {
-              "content": "Update mutable fields on a Phonely agent. `uid` and `agentId` are required;\nall other fields are optional and only update the agent record when supplied.\n",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "update-agent"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
+            "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
@@ -592,290 +643,318 @@
                 "value": "application/json"
               }
             ],
-            "method": "POST",
-            "auth": null,
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\",\n  \"agentName\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"greetingMessage\": \"<string>\",\n  \"humanizeConversation\": \"<boolean>\",\n  \"conversationStyle\": \"<string>\",\n  \"orgId\": \"<string>\"\n}",
+              "raw": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\",\n  \"agentName\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"greetingMessage\": \"<string>\",\n  \"humanizeConversation\": \"<boolean>\",\n  \"conversationStyle\": \"Friendly\",\n  \"orgId\": \"<string>\"\n}",
               "options": {
                 "raw": {
+                  "headerFamily": "json",
                   "language": "json"
                 }
               }
-            }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/update-agent",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "update-agent"
+              ]
+            },
+            "description": "Update mutable fields on a Phonely agent. `uid` and `agentId` are required;\nall other fields are optional and only update the agent record when supplied."
           },
           "response": [
             {
-              "id": "21cd7832-ffc9-43c1-acc2-da9b716e9c63",
+              "id": "dfdbde7f-07ba-46ac-b1e5-a720db5b9007",
               "name": "Agent updated successfully.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "update-agent"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\",\n  \"agentId\": \"agent_01HIJKLMNO\",\n  \"agentName\": \"Front Desk Assistant\",\n  \"voiceId\": \"voice_warm_female_en_us\",\n  \"greetingMessage\": \"Hello, you've reached Phonely Dental — how can I help you today?\",\n  \"humanizeConversation\": true,\n  \"conversationStyle\": \"Friendly\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\",\n  \"agentName\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"greetingMessage\": \"<string>\",\n  \"humanizeConversation\": \"<boolean>\",\n  \"conversationStyle\": \"Friendly\",\n  \"orgId\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/update-agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "update-agent"
+                  ]
                 }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"success\": true\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"success\": \"<boolean>\"\n}",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-dfdbde7f-07ba-46ac-b1e5-a720db5b9007"
             },
             {
-              "id": "2cb3e75e-ace0-4d2c-a520-918772d0489d",
+              "id": "5ca933a2-29a0-4a0f-9575-981ff6737a78",
               "name": "The request was malformed or failed validation.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "update-agent"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\",\n  \"agentId\": \"agent_01HIJKLMNO\",\n  \"agentName\": \"Front Desk Assistant\",\n  \"voiceId\": \"voice_warm_female_en_us\",\n  \"greetingMessage\": \"Hello, you've reached Phonely Dental — how can I help you today?\",\n  \"humanizeConversation\": true,\n  \"conversationStyle\": \"Friendly\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\",\n  \"agentName\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"greetingMessage\": \"<string>\",\n  \"humanizeConversation\": \"<boolean>\",\n  \"conversationStyle\": \"Friendly\",\n  \"orgId\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/update-agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "update-agent"
+                  ]
                 }
               },
               "status": "Bad Request",
               "code": 400,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-5ca933a2-29a0-4a0f-9575-981ff6737a78"
             },
             {
-              "id": "611cde51-545b-40d9-9ea6-df293c3a138e",
+              "id": "d374852b-796c-42e1-be44-cb094e5f9f83",
               "name": "Missing or invalid X-Authorization API key.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "update-agent"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\",\n  \"agentId\": \"agent_01HIJKLMNO\",\n  \"agentName\": \"Front Desk Assistant\",\n  \"voiceId\": \"voice_warm_female_en_us\",\n  \"greetingMessage\": \"Hello, you've reached Phonely Dental — how can I help you today?\",\n  \"humanizeConversation\": true,\n  \"conversationStyle\": \"Friendly\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\",\n  \"agentName\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"greetingMessage\": \"<string>\",\n  \"humanizeConversation\": \"<boolean>\",\n  \"conversationStyle\": \"Friendly\",\n  \"orgId\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/update-agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "update-agent"
+                  ]
                 }
               },
               "status": "Unauthorized",
               "code": 401,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-d374852b-796c-42e1-be44-cb094e5f9f83"
             },
             {
-              "id": "0078714a-5b79-4544-9f9a-903cb206a1c8",
+              "id": "aeb49b1f-cef9-4901-849f-0d3461ce36f1",
               "name": "The requested agent does not exist.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "update-agent"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\",\n  \"agentId\": \"agent_01HIJKLMNO\",\n  \"agentName\": \"Front Desk Assistant\",\n  \"voiceId\": \"voice_warm_female_en_us\",\n  \"greetingMessage\": \"Hello, you've reached Phonely Dental — how can I help you today?\",\n  \"humanizeConversation\": true,\n  \"conversationStyle\": \"Friendly\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\",\n  \"agentName\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"greetingMessage\": \"<string>\",\n  \"humanizeConversation\": \"<boolean>\",\n  \"conversationStyle\": \"Friendly\",\n  \"orgId\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/update-agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "update-agent"
+                  ]
                 }
               },
               "status": "Not Found",
               "code": 404,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-aeb49b1f-cef9-4901-849f-0d3461ce36f1"
             },
             {
-              "id": "a0356602-2c48-4ce2-862a-f4707725d5da",
+              "id": "5da18592-d4e7-41ab-9170-0f026b2c1556",
               "name": "An unexpected server error occurred.",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "update-agent"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-Authorization",
-                    "value": "<API Key>"
+                    "key": "Content-Type",
+                    "value": "application/json"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "X-Authorization",
+                    "value": "<API Key>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"uid\": \"user_01HABCDEFG\",\n  \"agentId\": \"agent_01HIJKLMNO\",\n  \"agentName\": \"Front Desk Assistant\",\n  \"voiceId\": \"voice_warm_female_en_us\",\n  \"greetingMessage\": \"Hello, you've reached Phonely Dental — how can I help you today?\",\n  \"humanizeConversation\": true,\n  \"conversationStyle\": \"Friendly\"\n}",
+                  "raw": "{\n  \"uid\": \"<string>\",\n  \"agentId\": \"<string>\",\n  \"agentName\": \"<string>\",\n  \"voiceId\": \"<string>\",\n  \"greetingMessage\": \"<string>\",\n  \"humanizeConversation\": \"<boolean>\",\n  \"conversationStyle\": \"Friendly\",\n  \"orgId\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/update-agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "update-agent"
+                  ]
                 }
               },
               "status": "Internal Server Error",
               "code": 500,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:26:30.000Z",
+              "updatedAt": "2026-10-22T01:26:30.000Z",
+              "uid": "35240-5da18592-d4e7-41ab-9170-0f026b2c1556"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "createdAt": "2026-10-22T01:26:30.000Z",
+          "updatedAt": "2026-10-22T01:26:30.000Z",
+          "uid": "35240-d99d4119-d1cb-43f8-96d7-7380cb5bcee1"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://app.phonely.ai/api",
-      "key": "baseUrl"
+      "id": "d0d1420b-c4a8-4391-913e-48f56e62f921",
+      "createdAt": "2026-10-22T01:26:30.000Z",
+      "updatedAt": "2026-10-22T01:26:30.000Z",
+      "uid": "35240-d0d1420b-c4a8-4391-913e-48f56e62f921"
     }
   ],
   "auth": {
@@ -883,25 +962,25 @@
     "apikey": [
       {
         "key": "key",
-        "value": "X-Authorization"
+        "value": "X-Authorization",
+        "type": "string"
       },
       {
         "key": "value",
-        "value": "{{apiKey}}"
+        "value": "{{apiKey}}",
+        "type": "string"
       },
       {
         "key": "in",
-        "value": "header"
+        "value": "header",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "2fb505c7-8b64-4a2e-b278-096bf713c050",
-    "name": "Phonely Agents API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "The Phonely Agents API lets you programmatically retrieve and update Phonely\nAI voice agents — the conversational entities that answer or place phone calls\non behalf of a business. Authentication is via an `X-Authorization` header\ncarrying an API key issued from the Phonely app. All endpoints are POST and\naccept JSON request bodies. The base URL is `https://app.phonely.ai/api`.\n\nPhonely's \"Frontend API\" is documented at https://docs.phonely.ai/api-reference/introduction\nand complements the visual workflow builder, which supports importing arbitrary\nREST APIs via curl. This OpenAPI describes the publicly documented endpoints\nonly — additional internal endpoints power the dashboard but are not part of\nthe public contract.\n\n\nContact Support:\n Name: Phonely",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://app.phonely.ai/api"
     }
-  }
+  ]
 }
