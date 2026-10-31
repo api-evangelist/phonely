@@ -1,4 +1,4 @@
-# Phonely (phonely)
+# Phonely
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,110 +66,167 @@
 
 Phonely is an AI voice agent platform that answers business phone calls in real time with large-language-model-powered conversation, sub-400ms response latency, 1,000+ voices across 100+ languages, and fine-tuned industry models for healthcare, finance, real estate, and insurance. The platform exposes a REST API at app.phonely.ai/api for agent management and a post-call webhook that delivers structured JSON (transcript, summary, sentiment, action items, recording URL) to any HTTPS endpoint after each call. Prebuilt integrations cover Google Calendar, Salesforce, HubSpot, Five9, Zapier, Outlook, Slack, and Gmail; the visual workflow builder also supports importing arbitrary REST APIs from a curl command. Pricing is usage-based with Free, Starter ($50/mo), Pro ($150/mo), and Enterprise tiers — minutes-included plus per-minute overage rather than per-agent seats. The platform is SOC 2, HIPAA, GDPR, CCPA, and PCI compliant.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/phonely/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/phonely/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · Voice AI · Voice Agents · Conversational AI · Telephony · Phone · Call Center · Contact Center · SMS · Webhook · Workflow Automation · Scheduling
 
-## Scope
+## Phonely on APIs.io
 
-- **Position:** Consuming
-- **Access:** 3rd-Party
+Everything profiled for Phonely is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/phonely/](https://apis.io/providers/phonely/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- AI
-- Artificial Intelligence
-- Voice AI
-- Voice Agents
-- Conversational AI
-- Telephony
-- Phone
-- Call Center
-- Contact Center
-- SMS
-- Webhooks
-- Workflow Automation
-- Scheduling
-- CRM
+- [Phonely Agents API](https://apis.io/apis/phonely/phonely-agents-api/) — Manage Phonely voice agents programmatically. Retrieve a single agent or list all agents for a user, and update agent configuration including voice,…
+- [Phonely Webhooks API](https://apis.io/apis/phonely/phonely-webhooks-api/) — Receive structured post-call event data from Phonely after each AI voice interaction completes. The Send Call Data post-call workflow action POSTs a JSON…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-24
-- **Modified:** 2026-05-24
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### AsyncAPI (1)
 
-### Phonely Agents API
+Event-driven and webhook contracts.
 
-Manage Phonely voice agents programmatically. Retrieve a single agent or list all agents for a user, and update agent configuration including voice, greeting message, name, conversation style (Casual, Humorous, Direct, Formal, Persuasive, Friendly), humanization, and organization membership. Authenticated with an X-Authorization API key against the app.phonely.ai/api base.
+- [Phonely Webhooks](https://apis.io/asyncapis/phonely/phonely-webhooks-asyncapi/)
 
-- **Human URL:** [https://docs.phonely.ai/api-reference/introduction](https://docs.phonely.ai/api-reference/introduction)
-- **Base URL:** `https://app.phonely.ai/api`
+#### Event channels (1)
 
-#### Tags
+Individual events and webhooks the provider emits.
 
-- AI
-- Voice
-- Agents
-- Telephony
-- Conversational AI
+- [/phonely/webhook](https://apis.io/channels/phonely/phonely-webhook/)
 
-#### Properties
+#### Agentic access (1)
 
-- [Documentation](https://docs.phonely.ai/api-reference/introduction)
-- [Documentation](https://docs.phonely.ai/api-reference/endpoint/get-agent)
-- [OpenAPI](openapi/phonely-agents-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/phonely-agents-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/phonely-agents-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/phonely-agent-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/phonely-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-### Phonely Webhooks API
+- [Phonely Agentic Access](https://apis.io/agentic-access/phonely/phonely-agentic-access/)
 
-Receive structured post-call event data from Phonely after each AI voice interaction completes. The Send Call Data post-call workflow action POSTs a JSON payload containing call metadata, full transcript (text + structured turns), AI-generated summary, purpose, topic, sentiment, key points, action items, follow-up indicators, mentioned entities (email, date, time), recording URL, and dashboard URL to any HTTPS endpoint you configure.
+#### JSON Schema (2)
 
-- **Human URL:** [https://docs.phonely.ai/webhook-reference/intro](https://docs.phonely.ai/webhook-reference/intro)
+The data models the API reads and writes.
 
-#### Tags
+- [Phonely Agent](https://apis.io/schemas/phonely/phonely-agent/)
+- [Phonely Post-Call Event](https://apis.io/schemas/phonely/phonely-post-call-event/)
 
-- AI
-- Voice
-- Webhooks
-- Events
-- Call Data
+#### JSON-LD (1)
 
-#### Properties
+Linked-data contexts for the provider's vocabulary.
 
-- [Documentation](https://docs.phonely.ai/webhook-reference/intro)
-- [Documentation](https://docs.phonely.ai/webhook-reference/endpoint/postcall-webhook)
-- [AsyncAPI](asyncapi/phonely-webhooks-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
-- [JSON Schema](json-schema/phonely-post-call-event-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [Example](examples/phonely-post-call-event-example.json)
-- [Postman Collection](collections/phonely-agents-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/phonely-agents-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Phonely Context](https://apis.io/jsonld/phonely/phonely-context/)
 
-## Common Properties
+#### Vocabulary (1)
 
-- [Portal](https://www.phonely.ai)
+The provider's domain terms, defined.
+
+- [Phonely Vocabulary](https://apis.io/vocabularies/phonely/phonely-vocabulary/)
+
+#### Examples (4)
+
+Example requests and responses.
+
+- [Phonely Get Agent Example](https://apis.io/examples/phonely/phonely-get-agent-example/)
+- [Phonely Get Agents Example](https://apis.io/examples/phonely/phonely-get-agents-example/)
+- [Phonely Post Call Event Example](https://apis.io/examples/phonely/phonely-post-call-event-example/)
+- [Phonely Update Agent Example](https://apis.io/examples/phonely/phonely-update-agent-example/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [Phonely Agents API](https://apis.io/collections/phonely/open-phonely-agents-api/)
+
+#### Governance rules (3)
+
+Spectral rulesets for the provider's contracts.
+
+- [Phonely — asyncapi rules](https://apis.io/rules/phonely/phonely-asyncapi-spectral-rules/)
+- [Phonely — jsonschema rules](https://apis.io/rules/phonely/phonely-jsonschema-spectral-rules/)
+- [Phonely API Rules](https://apis.io/rules/phonely/phonely-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Phonely Authentication](https://apis.io/security/phonely/phonely-authentication/)
+- [Phonely Domain Security](https://apis.io/security/phonely/phonely-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Phonely Plans Pricing](https://apis.io/plans/phonely/phonely-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Phonely Rate Limits](https://apis.io/rate-limits/phonely/phonely-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Phonely Finops](https://apis.io/finops/phonely/phonely-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.phonely.ai/)
 - [Documentation](https://docs.phonely.ai)
-- [Documentation](https://docs.phonely.ai/get-started/introduction)
-- [Getting Started](https://docs.phonely.ai/get-started/quick-start)
-- [Documentation](https://www.phonely.ai/developer)
+- [Getting started](https://docs.phonely.ai/get-started/quick-start)
 - [Changelog](https://www.phonely.ai/dev/changelog)
 - [Blog](https://www.phonely.ai/blogs)
-- [Sign Up](https://app.phonely.ai)
-- [Terms of Service](https://www.phonely.ai/terms)
-- [Privacy Policy](https://www.phonely.ai/privacy)
-- [LinkedIn](https://www.linkedin.com/company/phonely-ai)
-- [Customers](https://customers.twilio.com/en-us/phonely)
-- [Plans](https://www.phonely.ai/pricing)
-- [Plans](plans/phonely-plans-pricing.yml)
-- [Rate Limits](rate-limits/phonely-rate-limits.yml)
-- [Fin Ops](finops/phonely-finops.yml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
+- [Terms of service](https://www.phonely.ai/terms)
+- [Privacy policy](https://www.phonely.ai/privacy)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
-**URL:** https://apievangelist.com
+**Kin Score 38.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 69.2 |
+| Contract governance | 13.6 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 45.2 |
+| Access clarity | 28.9 |
+
+**Agent readiness 24.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.3** — Telecommunications
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/phonely/](https://apis.io/providers/phonely/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Phonely: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/phonely/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
